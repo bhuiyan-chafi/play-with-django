@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
+from debug_toolbar.toolbar import debug_toolbar_urls
 
+#the naming convention should not be changed for urlpatters, it is Django default. and you should always write the path like 'name/' not '/name/' or '/name'
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('authentication/',include('authentication.urls'))
+] + debug_toolbar_urls()

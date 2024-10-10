@@ -1,3 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse as response
 
-# Create your views here.
+def signUp(request):
+    return render(request,"index.html",{"app_name":"eCommerce App"})
